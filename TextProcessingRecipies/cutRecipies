@@ -1,0 +1,21 @@
+#cut files by column
+#-------------------
+
+#get particular columns. use the -f option
+#-----------------------------------------
+cut -f 2,3 -d"," ./testData/cutRecipies/toolsRecords.csv
+
+#by default delimiter is space. use other via the -d option
+#----------------------------------------------------------
+
+#get everything but the specified columns. use the --complement option
+#---------------------------------------------------------------------
+cut -f 2,3 -d"," ut -c1-5,10-15 --complement ./testData/cutRecipies/toolsRecords.csv
+
+#get chars range. use the -c option
+#----------------------------------
+cut -c1-10 ./testData/cutRecipies/toolsRecords.csv
+
+#specify output delimiter. use the --output-delimiter option
+#-----------------------------------------------------------
+cut -c1-5,10-15 --ouptut-delimiter ";" ./testData/cutRecipies/toolsRecords.csv
