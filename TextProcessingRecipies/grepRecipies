@@ -1,0 +1,62 @@
+#output whole line of match found
+#--------------------------------
+
+#grep "pattern" file
+
+#grep "pattern" file1 file2
+
+#via stdin
+#---------
+echo -e "hi there\nnew line" | grep line
+
+#egrep for regex
+#---------------
+echo -e "hi there 111\n222\nhello" | egrep "[0-9]{3}"
+
+#fetch only the matching word, not the whole line. use the -o option
+#-------------------------------------------------------------------
+echo -e "hi there\nhello there" | grep -o "there"
+echo -e "hi there\nhello there" | egrep -o "[a-z]{5}"
+
+#invert the result. use the -v option
+-------------------------------------
+echo -e "1\n2\n3" | grep -v 3
+
+#count number of matching lines. use the -c option
+--------------------------------------------------
+echo -e "1\n2\n3\n4" | egrep -c "[0-9]"
+
+#count number of words.
+#----------------------
+echo -e "1 2 3\n2 3\n3 4 5\n4 6" | egrep -o "[0-9]" | wc -l 
+
+#output line of matching found. use the -n option
+#------------------------------------------------
+echo -e "1\n2\n3\n4" | egrep -n "[0-9]"
+
+#list which of multiple files has the pattern. use the -l option
+#---------------------------------------------------------------
+
+#match more than one patterns
+#----------------------------
+#grep  -e "pattern1" -e "pattern2"
+
+#ignore case
+#-----------
+echo "hi there" | grep -i "Hi There"
+
+#recursively look over dirs for matching pattern.
+#------------------------------------------------
+#grep "myPattern" . -R -n
+
+#print a few lines after the match. use the -A option
+#----------------------------------------------------
+seq 15 | grep 10 -A 2
+
+print a few lines before the match. use the -B option
+#----------------------------------------------------
+seq 15 | grep 10 -B 2
+
+print a few lines around the match. use the -C option
+#----------------------------------------------------
+seq 15 | grep 10 -C 2
