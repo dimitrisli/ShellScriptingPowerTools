@@ -10,7 +10,7 @@ cut -f 2,3 -d"," ./testData/cutRecipies/toolsRecords.csv
 
 #get everything but the specified columns. use the --complement option
 #---------------------------------------------------------------------
-cut -f 2,3 -d"," ut -c1-5,10-15 --complement ./testData/cutRecipies/toolsRecords.csv
+cut -f 2,3 -d"," --complement ./testData/cutRecipies/toolsRecords.csv
 
 #get chars range. use the -c option
 #----------------------------------
