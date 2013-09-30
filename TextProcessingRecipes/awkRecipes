@@ -28,3 +28,11 @@ awk '{print $1,$2,$3}'
 #skipping header with getline
 #----------------------------
 echo -e "header\n1\n2\n3" | awk 'BEGIN{getline}{print $0}'
+
+#default delimiter on line fields is space. to define a new one use the -F option
+#--------------------------------------------------------------------------------
+#awk -F: '{print $NF}' myFile
+#awk 'BEGIN{FS=","}{print $NF}' myFile
+
+#for loop in awk
+#---------------
