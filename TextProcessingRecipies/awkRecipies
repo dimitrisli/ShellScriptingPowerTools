@@ -1,2 +1,28 @@
 #awk structure
-#awk ' BEGIN{  print "start" } pattern { commands } END{ print "end" } myFile
+#-------------
+#awk ' BEGIN{print "start"} pattern {commands} END{print "end"} myFile
+
+#BEGIN and END sections are optional. First the BEGIN SECTION executes for initialisation and outputing headers.
+#The pattern then executes on each line fetched by myFile. It's like a while loop on lines of the file.
+#Finally END section is executed once normally printing results
+
+echo -e "hello\nworld\nhow\nare\nyou" | awk 'BEGIN{print "Start"}{print} END{print "End"} '
+
+echo -e 'hi\nthere\n1\n2\n3'|awk 'BEGIN{i=0}{i++} END{print i}'
+
+#NR: current line number - $0: whole line content - $1,$2,$3: first/second/third field of current line
+#-----------------------------------------------------------------------------------------------------
+echo -e "one 11 12 13\ntwo 21 22 23\nthree 31 32 33" | \ 
+awk '{print "NR:" NR " - line:" $0 " - field1:" $1 " - field2: "$2 " - field3: "$3}'
+
+#print first second and third field of each line
+#-----------------------------------------------
+awk '{print $1,$2,$3}'
+
+#count number of lines in file
+#-----------------------------
+#awk 'END{print NR}' myFile
+
+#skipping header with getline
+#----------------------------
+echo -e "header\n1\n2\n3" | awk 'BEGIN{getline}{print $0}'
