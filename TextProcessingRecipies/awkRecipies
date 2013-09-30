@@ -2,6 +2,8 @@
 #-------------
 #awk ' BEGIN{print "start"} pattern {commands} END{print "end"} myFile
 
+#Description
+#-----------
 #BEGIN and END sections are optional. First the BEGIN SECTION executes for initialisation and outputing headers.
 #The pattern then executes on each line fetched by myFile. It's like a while loop on lines of the file.
 #Finally END section is executed once normally printing results
