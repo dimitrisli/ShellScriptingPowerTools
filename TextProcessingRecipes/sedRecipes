@@ -7,28 +7,28 @@ sed 's/pattern/replacement' myFile
 
 # by default:replace first occurence per line and stdout (not save)
 #------------------------------------------------------------------
-sed 's/nice/sad/' ./testData/sedRecipies/sedReplace
+sed 's/nice/sad/' ./testData/sedRecipes/sedReplace
 
 #by default:reading from stdin, same as above
 #--------------------------------------------
-#cat ./testData/sedRecipies/sedReplace | sed 's/nice/sad'
+#cat ./testData/sedRecipes/sedReplace | sed 's/nice/sad'
 
 #to replace all occurences per line include g
 #--------------------------------------------
-sed 's/nice/sad/g' ./testData/sedRecipies/sedReplace
+sed 's/nice/sad/g' ./testData/sedRecipes/sedReplace
 
 #to save on same file
 #--------------------
-sed -i 's/nice/sad/g' ./testData/sedRecipies/sedReplace
+sed -i 's/nice/sad/g' ./testData/sedRecipes/sedReplace
 
 #or alternatively
 #----------------
-sed 's/nice/sad/g' ./testData/sedRecipies/sedReplace > myNewFile
+sed 's/nice/sad/g' ./testData/sedRecipes/sedReplace > myNewFile
 mv myNewFile myFile
 
 #starting replacing from certain occurence
 #-----------------------------------------
-sed 's/nice/sad/3g' ./testData/sedRecipies/sedReplace
+sed 's/nice/sad/3g' ./testData/sedRecipes/sedReplace
 
 #sed delimiters
 #--------------
