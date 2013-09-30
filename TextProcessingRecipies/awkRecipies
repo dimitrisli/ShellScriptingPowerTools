@@ -1,0 +1,2 @@
+#awk structure
+#awk ' BEGIN{  print "start" } pattern { commands } END{ print "end" } myFile
