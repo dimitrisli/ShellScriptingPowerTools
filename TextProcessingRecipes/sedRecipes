@@ -38,11 +38,13 @@ sed 's/nice/sad/3g' ./testData/sedRecipes/sedReplace
 
 #/pattern/d remove lines matching pattern
 #----------------------------------------
-#sed '/^$/d' myFile  #removes empty lines
+echo -e "hello\n\nworld" > ./testData/sedRecipes/testSpaceFile
+sed -i '/^$/d' testSpaceFile  #removes empty lines
 
 #replace 2 digit number with 100
 #-------------------------------
-#sed -i 's/\b[0-9]\{2\}\b/100/g' myFile
+echo "1 20 nice days 101 10 indeed" > ./testData/sedRecipes/renameFileTest
+sed -i 's/\b[0-9]\{2\}\b/100/g' renameFileTest
 echo "1 20 nice days 101 10 indeed" | sed 's/\b[0-9]\{2\}\b/100/g'
 
 #matching with &: put all 2 digit numbers in brackets
