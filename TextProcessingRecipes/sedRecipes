@@ -53,7 +53,7 @@ sed 's/nice/sad/3g' ./testData/sedRecipes/sedReplace
 
 #groups and matching
 #-------------------
-echo "this is 10 nice days" | sed 's/\([0-9]\{2\}\) nice/\1\'
+echo "this is 10 nice days" | sed 's/\([0-9]\{2\}\) nice/\1/'
 
 #playing with groups
 #-------------------
