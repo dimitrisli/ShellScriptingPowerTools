@@ -25,3 +25,11 @@ wget -c URL
 #recursively download whole website
 #----------------------------------
 wget --mirror --convert-links URL
+
+#HTTP/FTP authentication
+#-----------------------
+wget --user user --password pass URL
+
+#prompt for pass
+#---------------
+wget --user user --ask-password URL 
