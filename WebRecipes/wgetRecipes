@@ -1,0 +1,27 @@
+#download file in web location
+#-----------------------------
+wget URL
+
+wget URL1 URL2
+
+wget ftp://my/location -O outputFilename -o notJustStdoutButLog
+
+#try 3 times
+#-----------
+wget -t 3 URL
+
+#restrict speed in kilobytes
+#---------------------------
+wget --limit-rate 20k http://location.iso
+
+#upper quota for file size
+#-------------------------
+wget -Q 100m http://loc1 http://loc2
+
+#resume previously interrupted download
+#--------------------------------------
+wget -c URL
+
+#recursively download whole website
+#----------------------------------
+wget --mirror --convert-links URL
