@@ -1,0 +1,19 @@
+#output in terminal
+#------------------
+curl URL
+
+#without progress
+#----------------
+curl URL --silent
+
+#download a file (similar to wget)
+#---------------------------------
+curl URL --silent -O
+
+#show progressbar
+#----------------
+curl URL -O location --progress
+
+#resume from interruption
+#------------------------
+curl -C - URL
