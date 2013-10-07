@@ -1,0 +1,6 @@
+#replace in all files with extension
+#-----------------------------------
+#sed is called once per file found
+find . -name *.java -exec sed -i 's/target/changed/g' \{\} \;
+#sed will get fed with a combination of found files
+find . -name *.java -exec sed -i 's/target/changed/g' \{\} \+
