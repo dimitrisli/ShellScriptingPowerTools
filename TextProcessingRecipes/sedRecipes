@@ -59,9 +59,21 @@ echo "this is 10 nice days" | sed 's/\([0-9]\{2\}\) nice/\1/'
 #-------------------
 echo HELLO world | sed 's/\([A-Z]\+\) \([a-z]\+\)/\2 \1/'
 
+
+#---------
+# Advanced
+#---------
+
 #replace in all files with extension
 #-----------------------------------
 #sed is called once per file found
 find . -name *.java -exec sed -i 's/target/changed/g' \{\} \;
 #sed will get fed with a combination of found files
 find . -name *.java -exec sed -i 's/target/changed/g' \{\} \+
+
+
+#view GMail unread emails
+#------------------------
+curl -u dimitrisli --silent "https://mail.google.com/mail/feed/atom" | \
+ tr -d '\n'  | sed 's:</entry>:\n:g' | \
+ sed 's/.*<title>\(.*\)<\/title.*<author><name>\(.*\)<\/name><email>\([^<]*\).*/Author: \2 [\3] \nSubject: \1\n/'
