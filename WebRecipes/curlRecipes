@@ -52,9 +52,9 @@ curl -u user http://auth.destination           #prompt for pass
 curl -I http://destination
 
 
-#---------
+#=========
 # Advanced
-#---------
+#=========
 
 #view GMail unread emails
 #------------------------
