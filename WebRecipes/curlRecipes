@@ -50,3 +50,14 @@ curl -u user http://auth.destination           #prompt for pass
 #getting only response headers to check size of destination or whether accessible
 #--------------------------------------------------------------------------------
 curl -I http://destination
+
+
+#---------
+# Advanced
+#---------
+
+#view GMail unread emails
+#------------------------
+curl -u dimitrisli --silent "https://mail.google.com/mail/feed/atom" | \
+ tr -d '\n'  | sed 's:</entry>:\n:g' | \
+ sed 's/.*<title>\(.*\)<\/title.*<author><name>\(.*\)<\/name><email>\([^<]*\).*/Author: \2 [\3] \nSubject: \1\n/'
