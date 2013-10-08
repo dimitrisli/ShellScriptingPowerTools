@@ -17,3 +17,19 @@ curl URL -O location --progress
 #resume from interruption
 #------------------------
 curl -C - URL
+
+#make it appear as coming from referer url
+#-----------------------------------------
+curl --referer http://google.com http://destination
+
+#cookies found along the way
+#---------------------------
+curl http://destination --cookie "user=username;pass=password"
+
+#specify the user agent
+#----------------------
+curl URL --user-agent "Mozilla/5.0"
+
+#pass additional headers
+#-----------------------
+curl -H "Host: www.dest.com" -H "Accept-language: en" URL
