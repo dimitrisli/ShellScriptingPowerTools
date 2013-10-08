@@ -33,3 +33,20 @@ curl URL --user-agent "Mozilla/5.0"
 #pass additional headers
 #-----------------------
 curl -H "Host: www.dest.com" -H "Accept-language: en" URL
+
+#limit rate
+#----------
+curl URL --limit-rate 100k
+
+#max file size
+#-------------
+curl URL --max-filesize 100m
+
+#authentication
+#--------------
+curl -u user:pass http://auth.destination
+curl -u user http://auth.destination           #prompt for pass
+
+#getting only response headers to check size of destination or whether accessible
+#--------------------------------------------------------------------------------
+curl -I http://destination
